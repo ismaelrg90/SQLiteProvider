@@ -1,3 +1,4 @@
+project
 libs
 target/
 lib_managed/
@@ -9,3 +10,8 @@ gen/
 *.apk
 tmp/
 .redcar/
+.project
+.classpath
+.gradle
+tests/tmp
+local.properties
