@@ -78,4 +78,10 @@ public class ExtendedSQLiteOpenHelper2 extends SQLiteOpenHelper implements IData
     public Map<String, String> getProjectionMap(String parent, String... foreignTables) {
         return DBUtils.getProjectionMap(getReadableDatabase(), parent, foreignTables);
     }
+
+	@Override
+	public List<String> getUniqueConstrains(String table) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

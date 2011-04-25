@@ -13,6 +13,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteQueryBuilder;
 import android.net.Uri;
 
+import java.io.IOException;
 import java.util.List;
 
 public class SQLiteProvider extends ContentProvider {
@@ -80,7 +81,11 @@ public class SQLiteProvider extends ContentProvider {
      */
     @Override
     public boolean onCreate() {
-        db = new ExtendedSQLiteOpenHelper(getContext());
+        try {
+			db = new ExtendedSQLiteOpenHelper(getContext());
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
         return true;
     }
 
