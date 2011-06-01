@@ -33,7 +33,19 @@ public class SQLiteContentProviderImpl extends SQLiteContentProvider {
     private static final String EXPAND = "expand";
 
     private InsertHelper helper;
-
+    
+    public SQLiteContentProviderImpl(String authority){
+    	super(authority);
+    }
+    
+    public SQLiteContentProviderImpl(String authority, int mode){
+    	super(authority, mode);
+    }
+    
+    public SQLiteContentProviderImpl(){
+    	super();
+    }
+    
     @Override
     public boolean onCreate() {
         super.onCreate();

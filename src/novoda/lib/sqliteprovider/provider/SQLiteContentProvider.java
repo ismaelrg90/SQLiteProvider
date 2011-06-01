@@ -30,6 +30,8 @@ import android.net.Uri;
 
 import java.util.ArrayList;
 
+import com.podio.Podio;
+
 /**
  * General purpose {@link ContentProvider} base class that uses SQLiteDatabase
  * for storage.
@@ -48,6 +50,23 @@ public abstract class SQLiteContentProvider extends SearchRecentSuggestionsProvi
     private final ThreadLocal<Boolean> mApplyingBatch = new ThreadLocal<Boolean>();
 
     private static final int SLEEP_AFTER_YIELD_DELAY = 4000;
+    
+    public final static int MODE = DATABASE_MODE_QUERIES;
+    
+    
+    public SQLiteContentProvider(String authority){
+    	super();
+    	setupSuggestions(authority, MODE);
+    }
+    
+    public SQLiteContentProvider(String authority, int mode){
+    	super();
+    	setupSuggestions(authority, mode);
+    }
+    
+    public SQLiteContentProvider(){
+    	super();
+    }
 
     @Override
     public boolean onCreate() {
