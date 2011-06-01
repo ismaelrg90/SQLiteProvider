@@ -22,6 +22,7 @@ import android.content.ContentProviderResult;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.OperationApplicationException;
+import android.content.SearchRecentSuggestionsProvider;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteTransactionListener;
@@ -33,7 +34,7 @@ import java.util.ArrayList;
  * General purpose {@link ContentProvider} base class that uses SQLiteDatabase
  * for storage.
  */
-public abstract class SQLiteContentProvider extends ContentProvider implements
+public abstract class SQLiteContentProvider extends SearchRecentSuggestionsProvider implements
         SQLiteTransactionListener {
 
     private static final String TAG = "SQLiteContentProvider";
